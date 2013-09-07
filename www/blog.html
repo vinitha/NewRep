@@ -6,35 +6,27 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/jqm.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Portfolio</title>
+        <title>Blog</title>
     </head>
     <body>
-    
-    <div id="portfolio-page" data-role="page">
+    <div id="blog-page"  data-role="page">
     <div data-role="header">
-        <h1><i class="icon-home"></i> Alex Bachuk Portfolio</h1>
+        <h1><i class="icon-home"></i> Alex Bachuk Blog</h1>
     </div><!-- /#header -->
     
-    <div id="portfolio-content" data-role="content">
+    <div id="blog-content" data-role="content">
         
         
-        <div id="portfolio-data"></div>
+        <div id="blog-data"></div>
 
 
-        <script id="portfolio-template" type="text/x-handlebars-template">
-            
-            {{#each posts}}
-                <div class="portfolio-piece">
+        <script id="blog-template" type="text/x-handlebars-template">
+                      {{#with page}}
+  <h2> {{title}} {{content}}</h2>
+  {{/with}}
 
-                <img src="{{attachments.[0].url}}" />
-                <h4>{{title}}</h4>
-                </div>
-            {{/each}}
-            
+ 
         </script>
-
-
-        
 
 
         <a data-role="button" data-transition="slide" href="index.html">Home</a>
@@ -60,7 +52,8 @@
         <script type="text/javascript" src="js/libs/handlebars.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
-            app.portfolio();
+            
+            app.blog();
         </script>
     </body>
 </html>
